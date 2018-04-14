@@ -1,0 +1,13 @@
+version: '2'
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - '8080:8080'
+    command:
+      - uwsgi
+      - --ini
+      - /srv/api/deploy/uwsgi.ini
+    volumes:
+      - .:/srv/api
